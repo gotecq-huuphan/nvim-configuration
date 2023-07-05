@@ -60,8 +60,6 @@ function M.setup()
       end,
     }
 
-    -- Better Netrw
-    use { "tpope/vim-vinegar" }
 
     -- Git
     use {
@@ -137,7 +135,7 @@ function M.setup()
     use {
       "nvim-treesitter/nvim-treesitter",
       opt = true,
-      event = "BufRead",
+--      event = "BufRead",
       run = ":TSUpdate",
       config = function()
         require("config.treesitter").setup()
@@ -147,14 +145,12 @@ function M.setup()
       },
     }
 
-    -- FZF
-    -- use { "junegunn/fzf", run = "./install --all", event = "VimEnter" } -- You don't need to install this if you already have fzf installed
-    -- use { "junegunn/fzf.vim", event = "BufEnter" }
+		-- You don't need to install this if you already have fzf installed
+		use { "junegunn/fzf", run = "./install --all" }
+		use { "junegunn/fzf.vim" }
 
-    -- FZF Lua
     use {
       "ibhagwan/fzf-lua",
-      event = "BufEnter",
       wants = "nvim-web-devicons",
     }
 
